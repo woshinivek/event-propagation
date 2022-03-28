@@ -5,20 +5,22 @@ const refs = {
 };
 
 refs.parent.addEventListener("click", onParentClick);
-refs.child.addEventListener("click", onChildClick);
+// refs.child.addEventListener("click", onChildClick);
 refs.innerChild.addEventListener("click", onInnerChild);
 
 function onParentClick(evt) {
   console.log("on parent click");
   console.log("on parent click -> evt.target: ", evt.target);
   console.log("on parent click -> evt.currentTarget: ", evt.currentTarget);
+
+  //   evt.currentTarget.style.backgroundColor = "red";
 }
 
-function onChildClick(evt) {
-  console.log("on child click");
-  console.log("on child click -> evt.target: ", evt.target);
-  console.log("on child click -> evt.currentTarget: ", evt.currentTarget);
-}
+// function onChildClick(evt) {
+//   console.log("on child click");
+//   console.log("on child click -> evt.target: ", evt.target);
+//   console.log("on child click -> evt.currentTarget: ", evt.currentTarget);
+// }
 
 function onInnerChild(evt) {
   console.log("on inner-child click");
