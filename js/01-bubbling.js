@@ -33,9 +33,31 @@ function onInnerChild(evt) {
   console.log("on inner-child click -> evt.currentTarget: ", evt.currentTarget);
 }
 
-// const inputMeyblRef = document.querySelector('input[data-input="meybl"]');
-// console.log(inputMeyblRef);
-// console.log(inputMeyblRef.dataset.input);
+const inputMeyblRef = document.querySelector('input[data-input="meybl"]');
+const buttonGetValueRef = document.querySelector(".getValue");
+const buttonClearRef = document.querySelector(".clear");
+const valueRef = document.querySelector(".value");
+
+buttonGetValueRef.addEventListener("click", onButtonGetValueRefClick);
+buttonClearRef.addEventListener("click", onButtonClearClick);
+
+function onButtonGetValueRefClick(evt) {
+  evt.preventDefault();
+  //   console.log(inputMeyblRef.value);
+  //   console.log(inputMeyblRef.value);
+
+  valueRef.textContent = inputMeyblRef.value;
+  inputMeyblRef.value = "";
+}
+
+function onButtonClearClick(evt) {
+  valueRef.innerHTML = "";
+}
+
+console.log(inputMeyblRef);
+console.log(buttonGetValueRef);
+
+console.log(valueRef);
 
 // const inputTupangRef = document.querySelector('input[data-input="tupang"]');
 // console.log(inputTupangRef);
