@@ -13,5 +13,8 @@ function onBtnClick(evt) {
     return;
   }
 
+  console.log(evt.target);
   console.log(`Click in the "${evt.target.textContent}"`);
 }
+
+// console.log(Number(containerRef.classList.contains("btns-Collection")));
