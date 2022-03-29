@@ -5,8 +5,8 @@ const refs = {
 };
 
 refs.parent.addEventListener("click", onParentClick);
-refs.child.addEventListener("click", onChildClick);
-refs.innerChild.addEventListener("click", onInnerChild);
+// refs.child.addEventListener("click", onChildClick);
+// refs.innerChild.addEventListener("click", onInnerChild);
 
 // window.addEventListener("click", (e) => {
 //   console.log(e.target);
@@ -33,31 +33,31 @@ function onInnerChild(evt) {
   console.log("on inner-child click -> evt.currentTarget: ", evt.currentTarget);
 }
 
-const inputMeyblRef = document.querySelector('input[data-input="meybl"]');
-const buttonGetValueRef = document.querySelector(".getValue");
-const buttonClearRef = document.querySelector(".clear");
-const valueRef = document.querySelector(".value");
+// const inputMeyblRef = document.querySelector('input[data-input="meybl"]');
+// const buttonGetValueRef = document.querySelector(".getValue");
+// const buttonClearRef = document.querySelector(".clear");
+// const valueRef = document.querySelector(".value");
 
-buttonGetValueRef.addEventListener("click", onButtonGetValueRefClick);
-buttonClearRef.addEventListener("click", onButtonClearClick);
+// buttonGetValueRef.addEventListener("click", onButtonGetValueRefClick);
+// buttonClearRef.addEventListener("click", onButtonClearClick);
 
-function onButtonGetValueRefClick(evt) {
-  evt.preventDefault();
-  //   console.log(inputMeyblRef.value);
-  //   console.log(inputMeyblRef.value);
+// function onButtonGetValueRefClick(evt) {
+//   evt.preventDefault();
+//   //   console.log(inputMeyblRef.value);
+//   //   console.log(inputMeyblRef.value);
 
-  valueRef.textContent = inputMeyblRef.value;
-  inputMeyblRef.value = "";
-}
+//   valueRef.textContent = inputMeyblRef.value;
+//   inputMeyblRef.value = "";
+// }
 
-function onButtonClearClick(evt) {
-  valueRef.innerHTML = "";
-}
+// function onButtonClearClick(evt) {
+//   valueRef.innerHTML = "";
+// }
 
-console.log(inputMeyblRef);
-console.log(buttonGetValueRef);
+// console.log(inputMeyblRef);
+// console.log(buttonGetValueRef);
 
-console.log(valueRef);
+// console.log(valueRef);
 
 // const inputTupangRef = document.querySelector('input[data-input="tupang"]');
 // console.log(inputTupangRef);
@@ -66,3 +66,5 @@ console.log(valueRef);
 // console.log(refs.parent);
 
 // console.log(inputRef.dataset);
+
+// window.addEventListener("click", (e) => console.log(e.target, e.currentTarget));
