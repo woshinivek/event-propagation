@@ -26,6 +26,14 @@ ul {
   list-style: none;
 }
 
+hr {
+  margin-top: 10px;
+}
+
+button {
+  padding: 3px;
+}
+
 .container {
   width: 1200px;
   padding-right: 15px;
@@ -58,5 +66,12 @@ ul {
 }
 
 .value {
+  margin-top: 10px;
+}
+
+/* -------------------------------- */
+/* -------------------------------- */
+
+.btns-collection {
   margin-top: 10px;
 }
