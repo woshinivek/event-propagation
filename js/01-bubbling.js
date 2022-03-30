@@ -5,8 +5,8 @@ const refs = {
 };
 
 refs.parent.addEventListener("click", onParentClick);
-// refs.child.addEventListener("click", onChildClick);
-// refs.innerChild.addEventListener("click", onInnerChild);
+refs.child.addEventListener("click", onChildClick);
+refs.innerChild.addEventListener("click", onInnerChild);
 
 // window.addEventListener("click", (e) => {
 //   console.log(e.target);

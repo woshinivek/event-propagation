@@ -82,3 +82,47 @@ button {
 
   outline: 1px solid black;
 }
+
+/* -------------------------------- */
+/* -------------------------------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+  list-style: none;
+
+  user-select: none;
+}
+
+.tags__item {
+  margin: 8px;
+}
+
+.tags__btn {
+  border: 1px solid #212121;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 10px 4px;
+
+  font-size: 24px;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  text-align: center;
+
+  text-decoration: none;
+  outline: none;
+
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.tags__btn-active {
+  color: #fff;
+  background-color: #3f51b5;
+}
