@@ -15,5 +15,6 @@ function onTagsContainerClick(e) {
     currentActiveBtn.classList.remove("tags__btn-active");
   }
 
-  e.target.classList.add("tags__btn-active");
+  const nextActiveBtn = e.target;
+  nextActiveBtn.classList.add("tags__btn-active");
 }
