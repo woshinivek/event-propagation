@@ -23,3 +23,16 @@ function onTagsContainerClick(e) {
     currentActiveBtn.classList.remove("tags__btn-active");
   }
 }
+
+const obj = {
+  local: "tupang",
+  country: {
+    place: "snzn",
+    city: "dameisha",
+  },
+};
+
+console.log(obj.country?.place);
+// const tut = obj?.country.place;
+
+// console.log(tut);
