@@ -22,17 +22,22 @@ function onTagsContainerClick(e) {
   if (currentActiveBtn === nextActiveBtn) {
     currentActiveBtn.classList.remove("tags__btn-active");
   }
+
+  // console.dir(currentActiveBtn?.nodeName);
 }
 
-const obj = {
-  local: "tupang",
-  country: {
-    place: "snzn",
-    city: "dameisha",
-  },
-};
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
 
-console.log(obj.country?.place);
-// const tut = obj?.country.place;
+// const obj = {
+//   local: "tupang",
+//   country: {
+//     place: "snzn",
+//     city: "dameisha",
+//   },
+// };
 
-// console.log(tut);
+// console.log(obj.country?.place);
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
