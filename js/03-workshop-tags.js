@@ -1,4 +1,5 @@
 const tagsContainerRef = document.querySelector(".js-tags");
+let selectedTag = null;
 
 tagsContainerRef.addEventListener("click", onTagsContainerClick);
 
@@ -8,7 +9,6 @@ function onTagsContainerClick(e) {
   }
 
   const currentActiveBtn = document.querySelector(".tags__btn-active");
-
   console.log(currentActiveBtn);
 
   if (currentActiveBtn) {
@@ -17,4 +17,9 @@ function onTagsContainerClick(e) {
 
   const nextActiveBtn = e.target;
   nextActiveBtn.classList.add("tags__btn-active");
+  selectedTag = nextActiveBtn.dataset.value;
+
+  if (currentActiveBtn === nextActiveBtn) {
+    currentActiveBtn.classList.remove("tags__btn-active");
+  }
 }
