@@ -81,18 +81,18 @@ function onTagsContainerClick(e) {
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
 
-const arr = [1, 2, 3, 4, 3, 2, 4, 3, 2, 45, 6, 7, 5, 44, 54, 45];
+// const arr = [1, 2, 3, 4, 3, 2, 4, 3, 2, 45, 6, 7, 5, 44, 54, 45];
 
 // const clearArr = new Set(arr);
-const clearArr = [...new Set(arr)];
+// const clearArr = [...new Set(arr)];
 
-console.log(arr);
-console.log(arr.length);
+// console.log(arr);
+// console.log(arr.length);
 
 // console.log(clearArr[4]);
 // console.log(clearArr.size);
 
-console.dir(clearArr);
+// console.dir(clearArr);
 
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
