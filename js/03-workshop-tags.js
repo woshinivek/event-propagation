@@ -41,3 +41,57 @@ function onTagsContainerClick(e) {
 
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
+
+// console.log(selected);
+
+// const Fn = function (amount) {
+//   this.amount = amount;
+// };
+
+// Fn.prototype.makeTotal = function (innerAmount) {
+//   let total = (this.amount += innerAmount);
+
+//   return total;
+// };
+
+// const mango = new Fn(89);
+
+// console.log(mango.makeTotal(90));
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+// class Fn {
+//   constructor({ amount, totalAmount } = {}) {
+//     this.amount = amount;
+//     this.totalAmount = totalAmount;
+//   }
+
+//   makeTotal(additionalAmount) {
+//     this.totalAmount += this.amount + additionalAmount;
+//   }
+// }
+
+// const mango = new Fn({ amount: 1000, totalAmount: 0 });
+// mango.makeTotal(780);
+
+// console.log(mango);
+// console.dir(mango);
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+// const arr = [1, 2, 3, 4, 3, 2, 4, 3, 2, 45, 6, 7, 5, 44, 54, 45];
+
+// const clearArr = new Set(arr);
+
+// console.log(arr);
+// console.log(arr.length);
+
+// console.log(clearArr);
+// console.log(clearArr.size);
+
+// console.dir(clearArr);
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
