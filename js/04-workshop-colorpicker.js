@@ -1,9 +1,12 @@
 import colors from "./colors.js";
 
-console.log(createColorCardsMarkup(colors));
+const paletteContainer = document.querySelector(".js-palette");
+const markup = createColorCardsMarkup(colors);
+
+paletteContainer.insertAdjacentHTML("beforeend", markup);
 
 function createColorCardsMarkup(colors) {
-  const markup = colors
+  return colors
     .map(({ hex, rgb }) => {
       return `
         <div class="color-card">
@@ -21,6 +24,4 @@ function createColorCardsMarkup(colors) {
       `;
     })
     .join("");
-
-  console.log(markup);
 }
