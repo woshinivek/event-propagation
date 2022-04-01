@@ -124,7 +124,8 @@
 //--------------------------------------------------------------------
 
 const tagsContainerRef = document.querySelector(".js-tags");
-let selectedTags = [];
+// let selectedTags = [];
+let selectedTags = new Set();
 
 tagsContainerRef.addEventListener("click", onTagsContainerClick);
 
@@ -133,8 +134,22 @@ function onTagsContainerClick(evt) {
     return;
   }
 
-  evt.target.classList.toggle("tags__btn-active");
+  const btn = evt.target;
+  const tag = btn.dataset.value;
+  const isBtnActive = btn.classList.contains("tags__btn-active");
 
-  selectedTags.push(evt.target.dataset.value);
+  if (isBtnActive) {
+    selectedTags.delete(tag);
+  } else {
+    selectedTags.add(tag);
+  }
+
+  btn.classList.toggle("tags__btn-active");
+
+  // selectedTags.push(evt.target.dataset.value);
+
   console.log(selectedTags);
 }
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
