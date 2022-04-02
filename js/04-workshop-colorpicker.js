@@ -29,7 +29,34 @@ function createColorCardsMarkup(colors) {
 }
 
 function onColorPaletteClick(evt) {
-  if (evt.target.classList.contains("color-swatch")) {
-    console.log(evt.target);
+  const isColorSwatchEl = evt.target.classList.contains("color-swatch");
+
+  if (!isColorSwatchEl) {
+    return;
   }
+
+  removeActiveClassFromCard();
+
+  const swatchEl = evt.target;
+  const parentColorCard = swatchEl.closest(".color-card");
+
+  addActiveClassToCard(parentColorCard);
+
+  setBodyBgColor(swatchEl.dataset.hex);
+}
+
+function setBodyBgColor(color) {
+  document.body.style.backgroundColor = color;
+}
+
+function removeActiveClassFromCard() {
+  const currenActiveCard = document.querySelector(".color-card.is-active");
+
+  if (currenActiveCard) {
+    currenActiveCard.classList.remove("is-active");
+  }
+}
+
+function addActiveClassToCard(card) {
+  card.classList.add("is-active");
 }
