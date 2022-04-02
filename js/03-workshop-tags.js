@@ -123,11 +123,41 @@
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
 
-const tagsContainerRef = document.querySelector(".js-tags");
-// let selectedTags = [];
+// const tagsContainerRef = document.querySelector(".js-tags");
+// // let selectedTags = [];
+// let selectedTags = new Set();
+
+// tagsContainerRef.addEventListener("click", onTagsContainerClick);
+
+// function onTagsContainerClick(evt) {
+//   if (evt.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+
+//   const btn = evt.target;
+//   const tag = btn.dataset.value;
+//   const isBtnActive = btn.classList.contains("tags__btn-active");
+
+//   if (isBtnActive) {
+//     selectedTags.delete(tag);
+//   } else {
+//     selectedTags.add(tag);
+//   }
+
+//   btn.classList.toggle("tags__btn-active");
+
+//   // selectedTags.push(evt.target.dataset.value);
+
+//   console.log(selectedTags);
+// }
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+const tagsContainer = document.querySelector(".js-tags");
 let selectedTags = new Set();
 
-tagsContainerRef.addEventListener("click", onTagsContainerClick);
+tagsContainer.addEventListener("click", onTagsContainerClick);
 
 function onTagsContainerClick(evt) {
   if (evt.target.nodeName !== "BUTTON") {
@@ -136,17 +166,15 @@ function onTagsContainerClick(evt) {
 
   const btn = evt.target;
   const tag = btn.dataset.value;
-  const isBtnActive = btn.classList.contains("tags__btn-active");
+  const activeBtn = btn.classList.contains("tags__btn-active");
 
-  if (isBtnActive) {
+  if (activeBtn) {
     selectedTags.delete(tag);
   } else {
     selectedTags.add(tag);
   }
 
   btn.classList.toggle("tags__btn-active");
-
-  // selectedTags.push(evt.target.dataset.value);
 
   console.log(selectedTags);
 }
