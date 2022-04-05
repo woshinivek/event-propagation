@@ -35,13 +35,11 @@ function onColorPaletteClick(evt) {
     return;
   }
 
-  removeActiveClassFromCard();
-
   const swatchEl = evt.target;
   const parentColorCard = swatchEl.closest(".color-card");
 
+  removeActiveClassFromCard();
   addActiveClassToCard(parentColorCard);
-
   setBodyBgColor(swatchEl.dataset.hex);
 }
 
