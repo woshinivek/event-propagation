@@ -154,10 +154,38 @@
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
 
-const tagsContainer = document.querySelector(".js-tags");
+// const tagsContainer = document.querySelector(".js-tags");
+// let selectedTags = new Set();
+
+// tagsContainer.addEventListener("click", onTagsContainerClick);
+
+// function onTagsContainerClick(evt) {
+//   if (evt.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+
+//   const btn = evt.target;
+//   const tag = btn.dataset.value;
+//   const activeBtn = btn.classList.contains("tags__btn-active");
+
+//   if (activeBtn) {
+//     selectedTags.delete(tag);
+//   } else {
+//     selectedTags.add(tag);
+//   }
+
+//   btn.classList.toggle("tags__btn-active");
+
+//   console.log(selectedTags);
+// }
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+const tagsContainerRef = document.querySelector(".js-tags");
 let selectedTags = new Set();
 
-tagsContainer.addEventListener("click", onTagsContainerClick);
+tagsContainerRef.addEventListener("click", onTagsContainerClick);
 
 function onTagsContainerClick(evt) {
   if (evt.target.nodeName !== "BUTTON") {
@@ -166,6 +194,7 @@ function onTagsContainerClick(evt) {
 
   const btn = evt.target;
   const tag = btn.dataset.value;
+
   const activeBtn = btn.classList.contains("tags__btn-active");
 
   if (activeBtn) {
@@ -178,6 +207,3 @@ function onTagsContainerClick(evt) {
 
   console.log(selectedTags);
 }
-
-//--------------------------------------------------------------------
-//--------------------------------------------------------------------
