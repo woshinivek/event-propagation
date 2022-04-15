@@ -43,10 +43,6 @@ function onColorPaletteClick(evt) {
   setBodyBgColor(swatchEl.dataset.hex);
 }
 
-function setBodyBgColor(color) {
-  document.body.style.backgroundColor = color;
-}
-
 function removeActiveClassFromCard() {
   const currenActiveCard = document.querySelector(".color-card.is-active");
 
@@ -57,4 +53,8 @@ function removeActiveClassFromCard() {
 
 function addActiveClassToCard(card) {
   card.classList.add("is-active");
+}
+
+function setBodyBgColor(color) {
+  document.body.style.backgroundColor = color;
 }
