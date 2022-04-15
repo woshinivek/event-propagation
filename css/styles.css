@@ -8,12 +8,6 @@
   --timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
   position: relative;
   font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -39,6 +33,16 @@ hr {
 button {
   padding: 3px;
   margin-left: 4px;
+}
+
+input {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -128,6 +132,9 @@ button {
   cursor: pointer;
 }
 
+/* -------------------------------- */
+/* -------------------------------- */
+
 .tags__btn-active {
   color: #fff;
   background-color: #3f51b5;
@@ -135,4 +142,10 @@ button {
 
 .ul-list {
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
