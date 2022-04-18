@@ -5,9 +5,9 @@ const refs = {
   input: document.querySelector("#filter"),
 };
 
-const listItemsMarkup = createListItemsMarkup(techs);
-refs.list.innerHTML = listItemsMarkup;
+const techsMarkup = createElementsMarkup(techs);
+refs.list.innerHTML = techsMarkup;
 
-function createListItemsMarkup(items) {
+function createElementsMarkup(items) {
   return items.map((item) => `<li>${item.label}</li>`).join("");
 }
