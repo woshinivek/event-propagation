@@ -6,9 +6,9 @@ const refs = {
 };
 
 const techsMarkup = createElementsMarkup(techs);
-refs.list.innerHTML = techsMarkup;
+populateList(techsMarkup);
 
-refs.input.addEventListener("input", onFilterChange);
+refs.input.addEventListener("input", _.debounce(onFilterChange, 500));
 
 function createElementsMarkup(items) {
   return items.map((item) => `<li>${item.label}</li>`).join("");
@@ -22,5 +22,9 @@ function onFilterChange(evt) {
   );
 
   const listFilteredItemsMarkup = createElementsMarkup(filteredItems);
-  refs.list.innerHTML = listFilteredItemsMarkup;
+  populateList(listFilteredItemsMarkup);
+}
+
+function populateList(markup) {
+  refs.list.innerHTML = markup;
 }
