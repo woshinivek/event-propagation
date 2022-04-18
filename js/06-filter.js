@@ -5,10 +5,14 @@ const refs = {
   input: document.querySelector("#filter"),
 };
 
-refs.input.addEventListener("input", onFilterChange);
-
 const techsMarkup = createElementsMarkup(techs);
 refs.list.innerHTML = techsMarkup;
+
+refs.input.addEventListener("input", onFilterChange);
+
+function createElementsMarkup(items) {
+  return items.map((item) => `<li>${item.label}</li>`).join("");
+}
 
 function onFilterChange(evt) {
   const filter = evt.target.value.toLowerCase();
@@ -16,8 +20,7 @@ function onFilterChange(evt) {
   const filteredItems = techs.filter((tech) =>
     tech.label.toLowerCase().includes(filter)
   );
-}
 
-function createElementsMarkup(items) {
-  return items.map((item) => `<li>${item.label}</li>`).join("");
+  const listFilteredItemsMarkup = createElementsMarkup(filteredItems);
+  refs.list.innerHTML = listFilteredItemsMarkup;
 }
