@@ -157,16 +157,24 @@ img {
   margin-bottom: 30px;
 }
 
-.feed img {
-  transform: translateX(-50%);
-  opacity: 0;
+.feed .thumb {
+  overflow: hidden;
+  border-radius: 10px;
   width: 640px;
-  height: 480px;
+
+  transform: translateX(-50%);
   transition: all 500ms var(--timing);
+}
+
+.feed img {
+  /* transform: translateX(-50%); */
+  opacity: 0;
+  height: auto;
+  /* transition: all 500ms var(--timing); */
   object-fit: cover;
 }
 
-.feed img.appear {
+.feed .thumb.appear {
   transform: translateX(0);
   opacity: 1;
 }
