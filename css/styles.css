@@ -149,3 +149,27 @@ img {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+/* -------------------------------- */
+/* -------------------------------- */
+
+.feed li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.feed img {
+  transform: translateX(-50%);
+  opacity: 0;
+  width: 640px;
+  height: 480px;
+  transition: all 500ms var(--timing);
+  object-fit: cover;
+}
+
+.feed img.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* -------------------------------- */
+/* -------------------------------- */
