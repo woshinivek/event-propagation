@@ -1,11 +1,28 @@
 if ("loading" in HTMLImageElement.prototype) {
-  console.log();
+  addSrcAttribute();
+} else {
+  addLazySizesScript();
+}
+
+const images = document.querySelectorAll("img[data-src]");
+
+images.forEach((img) =>
+  img.addEventListener("load", onImageLoaded, { once: true })
+);
+
+function onImageLoaded(evt) {
+  evt.target.classList.add("appear");
+}
+
+function addSrcAttribute() {
   const images = document.querySelectorAll('img[loading="lazy"]');
 
   images.forEach((img) => {
     img.src = img.dataset.src;
   });
-} else {
+}
+
+function addLazySizesScript() {
   const script = document.createElement("script");
 
   script.src =
@@ -25,14 +42,4 @@ if ("loading" in HTMLImageElement.prototype) {
   script.referrerPolicy = "no-referrer";
 
   document.body.appendChild(script);
-}
-
-const images = document.querySelectorAll("img[data-src]");
-
-images.forEach((img) =>
-  img.addEventListener("load", onImageLoaded, { once: true })
-);
-
-function onImageLoaded(evt) {
-  evt.target.classList.add("appear");
 }
