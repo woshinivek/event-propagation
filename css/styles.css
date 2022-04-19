@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-:root {
+/* :root {
   --timing: cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
 body {
   position: relative;
@@ -157,24 +157,24 @@ img {
   margin-bottom: 30px;
 }
 
-.feed .thumb {
-  overflow: hidden;
+.feed img {
+  transform: translateX(-50%);
   border-radius: 10px;
   width: 640px;
-
-  transform: translateX(-50%);
-  transition: all 500ms var(--timing);
-}
-
-.feed img {
-  /* transform: translateX(-50%); */
+  height: 480px;
   opacity: 0;
-  height: auto;
-  /* transition: all 500ms var(--timing); */
   object-fit: cover;
+  transition: all 500ms linear 700ms;
 }
 
-.feed .thumb.appear {
+/* .feed img {
+  transform: translateX(-50%);
+  height: auto;
+  transition: all 500ms var(--timing);
+  object-fit: cover;
+} */
+
+.feed img.appear {
   transform: translateX(0);
   opacity: 1;
 }
