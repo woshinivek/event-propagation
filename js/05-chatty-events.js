@@ -20,22 +20,33 @@ function onMouseMove(evt) {
 // --------------------------------------------------------------
 // --------------------------------------------------------------
 
+// const inputRef = document.querySelector(".js-input");
+// const outputRef = document.querySelector(".js-output");
+// let inputCallbackCounter = 0;
+
+// const debouncedInputChange = _.debounce(onInputChange, 900);
+
+// inputRef.addEventListener("input", debouncedInputChange);
+
+// function onInputChange(evt) {
+//   inputCallbackCounter += 1;
+
+//   outputRef.textContent = `
+//   amounth of Callback counter "onInputChange": ${inputCallbackCounter},
+//   value: ${evt.target.value}
+// `;
+// }
+
+// --------------------------------------------------------------
+// --------------------------------------------------------------
 const inputRef = document.querySelector(".js-input");
 const outputRef = document.querySelector(".js-output");
-let inputCallbackCounter = 0;
+let calbackCounter = 0;
 
-const debouncedInputChange = _.debounce(onInputChange, 900);
-
-inputRef.addEventListener("input", debouncedInputChange);
+inputRef.addEventListener("input", _.debounce(onInputChange, 300));
 
 function onInputChange(evt) {
-  inputCallbackCounter += 1;
+  calbackCounter += 1;
 
-  outputRef.textContent = `
-  amounth of Callback counter "onInputChange": ${inputCallbackCounter},
-  value: ${evt.target.value} 
-`;
+  outputRef.textContent = `amounth of Callback counter "onInputChange": ${calbackCounter}, Value: ${evt.target.value}`;
 }
-
-// --------------------------------------------------------------
-// --------------------------------------------------------------
