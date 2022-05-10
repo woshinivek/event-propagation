@@ -1,18 +1,22 @@
 import techs from "./tech.js";
 
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
 const refs = {
-  list: document.querySelector(".js-list"),
   input: document.querySelector("#filter"),
+  list: document.querySelector(".js-list"),
 };
 
-const techsMarkup = createElementsMarkup(techs);
-populateList(techsMarkup);
+const listMarkup = createTechsMarkup(techs);
 
-refs.input.addEventListener("input", _.debounce(onFilterChange, 500));
-
-function createElementsMarkup(items) {
+function createTechsMarkup(items) {
   return items.map((item) => `<li>${item.label}</li>`).join("");
 }
+
+populateList(listMarkup);
+
+refs.input.addEventListener("input", onFilterChange);
 
 function onFilterChange(evt) {
   const filter = evt.target.value.toLowerCase();
@@ -21,8 +25,9 @@ function onFilterChange(evt) {
     tech.label.toLowerCase().includes(filter)
   );
 
-  const listFilteredItemsMarkup = createElementsMarkup(filteredItems);
-  populateList(listFilteredItemsMarkup);
+  const listMarkup = createTechsMarkup(filteredItems);
+
+  populateList(listMarkup);
 }
 
 function populateList(markup) {
