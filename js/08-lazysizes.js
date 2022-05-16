@@ -1,6 +1,8 @@
 if ("loading" in HTMLImageElement.prototype) {
+  console.log("hi google");
   addSrcAttribute();
 } else {
+  console.log("hi safari");
   addLazySizesScript();
 }
 

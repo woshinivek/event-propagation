@@ -239,3 +239,11 @@ function onTagsContainerClick(evt) {
 
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
+
+window.addEventListener("keypress", onKey);
+
+function onKey(evt) {
+  console.dir(evt);
+
+  console.log("keypress: ", evt.keyCode);
+}

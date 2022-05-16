@@ -16,7 +16,8 @@ function createTechsMarkup(items) {
 
 populateList(listMarkup);
 
-refs.input.addEventListener("input", onFilterChange);
+// refs.input.addEventListener("input", _.throttle(onFilterChange, 600));
+refs.input.addEventListener("input", _.debounce(onFilterChange, 300));
 
 function onFilterChange(evt) {
   const filter = evt.target.value.toLowerCase();
@@ -33,3 +34,9 @@ function onFilterChange(evt) {
 function populateList(markup) {
   refs.list.innerHTML = markup;
 }
+
+// console.log(fuse.prototype);
+
+const fuse = new Fuse(techs);
+
+console.log(fuse);
