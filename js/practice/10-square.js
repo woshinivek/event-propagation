@@ -21,10 +21,10 @@ import colorsForPractice from "./colors-practice.js";
 //   if (evt.target.nodeName !== "BUTTON") {
 //     return;
 //   }
+//   const btn = evt.target;
+//   const color = btn.dataset.color;
 
 //   squareRef.style.backgroundColor = color;
-
-//   const btn = evt.target;
 
 //   if (btn.classList.contains("activeBtn")) {
 //     btn.classList.remove("activeBtn");
@@ -53,39 +53,89 @@ import colorsForPractice from "./colors-practice.js";
 
 // ----------------------------------------------------------
 
+// const btnContainer = document.getElementById("container");
+// const squareRef = document.getElementById("square");
+// let prevStyle = null;
+
+// window.onload = () => {
+//   btnContainer.addEventListener("click", setColorSquare);
+// };
+
+// function setColorSquare(evt) {
+//   const { target } = evt;
+
+//   if (evt.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+
+//   squareRef.style.backgroundColor = target.dataset.color;
+//   setActiveBtn(target);
+// }
+
+// function setActiveBtn(target) {
+//   const activeBtn = document.querySelector("button.activeBtn");
+
+//   if (prevStyle === target.dataset.color) {
+//     activeBtn.classList.remove("activeBtn");
+//     squareRef.style.backgroundColor = "";
+//     prevStyle = null;
+//   } else {
+//     prevStyle = target.dataset.color;
+
+//     if (activeBtn) {
+//       activeBtn.classList.remove("activeBtn");
+//     }
+//     target.classList.add("activeBtn");
+//   }
+// }
+
+// ----------------------------------------------------------
+
 const btnContainer = document.getElementById("container");
 const squareRef = document.getElementById("square");
 let prevStyle = null;
 
 window.onload = () => {
-  btnContainer.addEventListener("click", setColorSquare);
+  btnContainer.addEventListener("click", onBtnClick);
 };
 
-function setColorSquare(evt) {
-  const { target } = evt;
+function onBtnClick(evt) {
+  const { target: btn } = evt;
+  const color = btn.dataset.color;
 
   if (evt.target.nodeName !== "BUTTON") {
     return;
   }
 
-  squareRef.style.backgroundColor = target.dataset.color;
-  setActiveBtn(target);
+  removeActiveBtn();
+  addActiveBtnClass(btn);
+  setSquareColor(color);
+  removesStylesAtSecondClickOnTheActiveButton(btn);
 }
 
-function setActiveBtn(target) {
-  const activeBtn = document.querySelector("button.activeBtn");
+function removeActiveBtn() {
+  const activeBtn = document.querySelector(".activeBtn");
 
-  if (prevStyle === target.dataset.color) {
+  if (activeBtn) {
     activeBtn.classList.remove("activeBtn");
+  }
+}
+
+function addActiveBtnClass(btn) {
+  btn.classList.add("activeBtn");
+}
+
+function setSquareColor(color) {
+  squareRef.style.backgroundColor = color;
+}
+
+function removesStylesAtSecondClickOnTheActiveButton(btn) {
+  if (prevStyle === btn.dataset.color) {
+    btn.classList.remove("activeBtn");
     squareRef.style.backgroundColor = "";
     prevStyle = null;
   } else {
-    prevStyle = target.dataset.color;
-
-    if (activeBtn) {
-      activeBtn.classList.remove("activeBtn");
-    }
-    target.classList.add("activeBtn");
+    prevStyle = btn.dataset.color;
   }
 }
 
