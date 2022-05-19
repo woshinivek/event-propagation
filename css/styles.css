@@ -223,3 +223,19 @@ img {
   margin-top: 20px;
   display: flex;
 }
+
+#statContainer {
+  font-size: 50px;
+  text-align: center;
+}
+
+#output {
+  margin-top: 20px;
+  /* outline: 1px solid red; */
+}
+
+.outputContainer {
+  height: 10px;
+}
+
+/* // ------------------------------------------------- */
